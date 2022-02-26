@@ -1,0 +1,85 @@
+<p>Hi i am {{name.toUpperCase()}} i am a {{status}}. i am {{age}} years old. my current salary is
+  {{salary | currency:'INR'}}</p>
+
+<!-- pipe in angular
+  https://angular.io/api?query=pipe
+-->
+<input type="date" [(ngModel)]="myDate" />
+{{myDate | date:'fullDate'}}
+
+<br /><br />
+<!-- property binding -->
+<button [class]="btnColor">Click me 1</button> {{'  '}}
+<button class={{btnColor}}>Click me 2</button> {{'  '}}
+<!-- class={{btnColor}} it's always convert to string  -->
+<button [class]="btnColor" [disabled]="isDisable">Click me 3</button>
+
+<!-- Event binding -->
+<br /> <br />
+<button [class]="btnColor" (click)="showSalary()">Show salary in bdt</button>
+
+<br />
+
+<input type="text" [value]="inputValue" (input)="getInput($event)" />
+
+<input type="text" [value]="inputValue" (input)="inputValue = $any($event.target).value" />
+
+<!-- two way data binding -->
+<!-- 👇 do property binding and event binding together
+  -> first need to import FormsModule in app.module.ts file
+-->
+
+<input type="text" [(ngModel)]="inputValue" />
+
+{{inputValue}}
+<!--
+
+  Note:
+=====================
+1. property binding er jonno [] user korbo
+2. event/input binding er jonno () use korbo
+
+-->
+
+
+<!-- if directive -->
+<h3 *ngIf="salary > 700"> salary is more than $700</h3>
+
+<!-- if else directive -->
+<h3 *ngIf="salary < 700; else highSalary"> salary is less than 50</h3>
+<ng-template #highSalary>
+  <h3>Salary is more than $700</h3>
+</ng-template>
+
+
+<!-- loops -->
+<ul>
+  <li *ngFor="let data of fruits; index as i; even as e">
+    <h4>{{i}} --> {{data}} --> {{e}}</h4>
+  </li>
+</ul>
+
+<!-- show only even index fruits -->
+<p>=======================</p>
+<ul>
+  <li *ngFor="let data of fruits; even as e; index as i">
+    <h4 *ngIf="e">{{data}} --> {{i}}</h4>
+  </li>
+</ul>
+
+<p>=======================</p>
+
+<ul>
+  <li *ngFor="let data of fruits; even as e; index as i" [class]="e? 'red' : 'green' ">
+    <h4>{{data}} --> {{i}}</h4>
+  </li>
+</ul>
+
+
+<p>=======================</p>
+<!-- https://angular.io/api/common/NgClass -->
+<ul>
+  <li *ngFor="let data of fruits; even as e" [ngClass]="{'orange':e, 'pink':!e}">
+    <h4>{{data}} -- {{e}}</h4>
+  </li>
+</ul>

@@ -1,0 +1,9 @@
+<div class="a-user">
+  <div>
+    <ng-content select="h4"></ng-content>
+    <p class="a-user__info">Hi i am {{name | uppercase}} i am a {{status}}. i am {{age}} years old. my current salary is
+      {{salary | currency:'INR'}}</p>
+    <ng-content select="input"></ng-content>
+  </div>
+  <button class="btn pink" (click)="passData(name)">Pass to parent</button>
+</div>
