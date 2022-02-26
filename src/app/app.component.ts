@@ -7,6 +7,7 @@ import { User } from '../models/user';
 })
 export class AppComponent {
   title = 'my-app';
+  show: boolean = true;
 
   inputHeader: string = 'header';
   users: User[] = [

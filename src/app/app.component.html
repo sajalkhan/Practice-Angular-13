@@ -1,8 +1,9 @@
 <div *ngFor="let user of users; even as e" [class]="e? 'green': 'orange'">
-  <app-user [name]="user.name" [age]="user.age" [salary]="user.salary" [status]="user.status"
+  <app-user *ngIf="show" [name]="user.name" [age]="user.age" [salary]="user.salary" [status]="user.status"
     (userEvent)="receiveData($event)">
     <!-- pass as a children [content projection] -->
     <h4>{{inputHeader}}</h4>
-    <input type="text" [(ngModel)]="inputHeader" />
+    <input type="text" [(ngModel)]="user.name" />
   </app-user>
+  <button class="btn red" (click)="show=!show">destroy component x</button>
 </div>
