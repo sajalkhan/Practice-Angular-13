@@ -1,3 +1,6 @@
+<h1>{{phoneNumber | countryCodes}}</h1>
+<h1>{{phoneNumber | countryCodes: "USA"}}</h1>
+
 <div *ngFor="let user of users; even as e" [class]="e? 'green': 'orange'">
   <app-user *ngIf="show" [name]="user.name" [age]="user.age" [salary]="user.salary" [status]="user.status"
     (userEvent)="receiveData($event)">
@@ -5,5 +8,6 @@
     <h4>{{inputHeader}}</h4>
     <input type="text" [(ngModel)]="user.name" />
   </app-user>
+
   <button class="btn red" (click)="show=!show">destroy component x</button>
 </div>

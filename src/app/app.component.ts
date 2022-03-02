@@ -9,6 +9,8 @@ export class AppComponent {
   title = 'my-app';
   show: boolean = true;
 
+  phoneNumber: string = '01740980351';
+
   inputHeader: string = 'header';
   users: User[] = [
     {

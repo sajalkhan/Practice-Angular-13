@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HighlightsDirective } from '../directives/highlights.directive';
+import { CountryCodesPipe } from '../pipe/country-codes.pipe';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { HighlightsDirective } from '../directives/highlights.directive';
     UserComponent,
     ProfileComponent,
     HighlightsDirective,
+    CountryCodesPipe,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
