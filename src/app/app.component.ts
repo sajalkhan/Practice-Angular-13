@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from '../models/user';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -25,21 +26,30 @@ export class AppComponent {
       salary: 2400,
       status: 'doctor',
     },
-    {
-      name: 'milon',
-      age: 27,
-      salary: 2600,
-      status: 'engineer',
-    },
-    {
-      name: 'sharif',
-      age: 32,
-      salary: 6000,
-      status: 'business man',
-    },
+    // {
+    //   name: 'milon',
+    //   age: 27,
+    //   salary: 2600,
+    //   status: 'engineer',
+    // },
+    // {
+    //   name: 'sharif',
+    //   age: 32,
+    //   salary: 6000,
+    //   status: 'business man',
+    // },
   ];
 
   receiveData(msg: string) {
     alert(msg);
   }
+
+  // ngOnInit(): void {
+  //   HttpClient;
+  // }
+
+  //dependency injection-- ai khane HttpClient ekta dependency inject kore dilam app component a
+  // constructor(private http: HttpClient) {}
+
+  fetchData() {}
 }
